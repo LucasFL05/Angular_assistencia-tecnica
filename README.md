@@ -42,7 +42,7 @@ O frontend foi desenvolvido em Angular 19, utilizando:
 ### 1. Clone o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/sistema-assistencia-tecnica.git
+git clone https://github.com/LucasFL05/Angular_assistencia-tecnica
 ```
 
 ### 2. Instale as dependências
