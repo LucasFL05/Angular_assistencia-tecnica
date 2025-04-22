@@ -1,0 +1,16 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 20vw;
+}
+
+.mat-toolbar {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.main-content {
+  padding: 16px;
+}

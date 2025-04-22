@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-toolbar color="primary">Assistência Técnica</mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/clientes">
+        <mat-icon>person</mat-icon>
+        <span>Clientes</span>
+      </a>
+      <a mat-list-item routerLink="/dispositivos">
+        <mat-icon>smartphone</mat-icon>
+        <span>Dispositivos</span>
+      </a>
+      <a mat-list-item routerLink="/ordens">
+        <mat-icon>build</mat-icon>
+        <span>Ordens de Serviço</span>
+      </a>
+      <a mat-list-item routerLink="/estoque">
+        <mat-icon>inventory_2</mat-icon>
+        <span>Estoque</span>
+      </a>
+      <a mat-list-item routerLink="/relatorios">
+        <mat-icon>bar_chart</mat-icon>
+        <span>Relatórios</span>
+      </a>
+    </mat-nav-list>
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
