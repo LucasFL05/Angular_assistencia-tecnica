@@ -1,0 +1,19 @@
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color:#ddd;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+  margin-left: 5px;
+  overflow-x: hidden;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header-title {
+  margin-left: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+}

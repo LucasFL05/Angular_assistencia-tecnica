@@ -1,4 +1,36 @@
+
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 64px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #fff;
+}
+
+.header {
+  grid-area: header;
+  background-color: #1976d2;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
 .main-content {
-  margin-left: 250px;
-  padding: 20px;
+  grid-area: main;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.sidenav {
+  min-height: 100%;
+  width: 310px;
+  overflow: hidden;
 }
