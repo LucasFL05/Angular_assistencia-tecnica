@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule,
     MatSidenav,
+    RouterModule
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css',
