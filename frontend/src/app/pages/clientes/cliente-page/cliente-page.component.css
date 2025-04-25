@@ -7,6 +7,11 @@ mat-card-header {
   color: white;
 }
 
+mat-card-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 table {
   width: 100%;
 }
@@ -14,4 +19,50 @@ table {
 mat-card-actions {
   display: flex;
   justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  mat-card {
+    margin: 8px;
+  }
+
+  mat-card-title {
+    font-size: 1.2em;
+  }
+
+  table {
+    font-size: 0.9em;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  mat-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  mat-card {
+    margin: 4px;
+  }
+
+  mat-card-title {
+    font-size: 1em;
+  }
+
+  table {
+    font-size: 0.8em;
+  }
+
+  th, td {
+    padding: 4px;
+  }
 }
