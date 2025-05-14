@@ -16,7 +16,6 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatDialogModule,
     MatCardModule,
-    DispositivoDialogComponent
   ],
   templateUrl: './dispositivo.component.html',
   styleUrls: ['./dispositivo.component.css']
