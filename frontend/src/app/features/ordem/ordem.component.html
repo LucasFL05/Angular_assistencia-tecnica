@@ -1,1 +1,60 @@
-<p>ordem-page works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Ordens de Serviço</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let ordem">{{ ordem.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="descricaoProblema">
+        <th mat-header-cell *matHeaderCellDef>Descrição do Problema</th>
+        <td mat-cell *matCellDef="let ordem">{{ ordem.descricaoProblema }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let ordem">{{ ordem.status | uppercase }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataAbertura">
+        <th mat-header-cell *matHeaderCellDef>Data de Abertura</th>
+        <td mat-cell *matCellDef="let ordem">{{ ordem.dataAbertura | date:'short' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataConclusao">
+        <th mat-header-cell *matHeaderCellDef>Data de Conclusão</th>
+        <td mat-cell *matCellDef="let ordem">{{ ordem.dataConclusao ? (ordem.dataConclusao | date:'short') : '-' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dispositivoId">
+        <th mat-header-cell *matHeaderCellDef>Dispositivo ID</th>
+        <td mat-cell *matCellDef="let ordem">{{ ordem.dispositivoId }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let ordem">
+          <button mat-icon-button color="primary" (click)="editOrdem(ordem)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteOrdem(ordem.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    </table>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="addOrdem()">Adicionar Ordem de Serviço</button>
+  </mat-card-actions>
+</mat-card>
