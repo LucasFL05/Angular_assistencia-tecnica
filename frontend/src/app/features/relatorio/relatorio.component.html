@@ -1,1 +1,82 @@
-<p>relatorio-page works!</p>
+<ng-container *ngIf="relatorio as r">
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+    <mat-card>
+      <mat-card-title>Concluídas (mês)</mat-card-title>
+      <mat-card-content>{{ r.totalConcluidasMes }}</mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Em andamento</mat-card-title>
+      <mat-card-content>{{ r.totalEmAndamento }}</mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Canceladas (mês)</mat-card-title>
+      <mat-card-content>{{ r.totalCanceladasMes }}</mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>Abertas hoje</mat-card-title>
+      <mat-card-content>{{ r.totalAbertasHoje }}</mat-card-content>
+    </mat-card>
+  </div>
+
+  <mat-card class="mb-6">
+    <mat-card-title>Últimas ordens atualizadas</mat-card-title>
+    <mat-card-content>
+      <table mat-table [dataSource]="r.ordensRecentes" class="w-full">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let o">{{ o.id }}</td>
+        </ng-container>
+        <ng-container matColumnDef="cliente">
+          <th mat-header-cell *matHeaderCellDef>Cliente</th>
+          <td mat-cell *matCellDef="let o">{{ o.cliente }}</td>
+        </ng-container>
+        <ng-container matColumnDef="dispositivo">
+          <th mat-header-cell *matHeaderCellDef>Dispositivo</th>
+          <td mat-cell *matCellDef="let o">{{ o.dispositivo }}</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let o">{{ o.status }}</td>
+        </ng-container>
+        <ng-container matColumnDef="dataAtualizacao">
+          <th mat-header-cell *matHeaderCellDef>Atualizado em</th>
+          <td mat-cell *matCellDef="let o">{{ formatarData(o.dataAtualizacao) }}</td>
+        </ng-container>
+        <ng-container matColumnDef="tecnico">
+          <th mat-header-cell *matHeaderCellDef>Técnico</th>
+          <td mat-cell *matCellDef="let o">{{ o.tecnico }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="mb-6">
+    <mat-card-title>Distribuição por status</mat-card-title>
+    <mat-card-content>
+      <canvas baseChart
+              [datasets]="pieChartDatasets"
+              [labels]="pieChartLabels"
+              [options]="pieChartOptions"
+              [type]="pieChartType">
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Ordens por dia</mat-card-title>
+    <mat-card-content>
+      <canvas baseChart
+              [datasets]="lineChartDatasets"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [type]="lineChartType">
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+
+</ng-container>
