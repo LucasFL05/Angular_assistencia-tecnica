@@ -11,9 +11,9 @@ export class RelatorioService {
       totalCanceladasMes: 3,
       totalAbertasHoje: 5,
       ordensRecentes: [
-        { id: 101, cliente: 'João Silva', dispositivo: 'Samsung A10', status: 'CONCLUIDA', dataAtualizacao: '2025-05-13T14:20:00', tecnico: 'Marcos' },
-        { id: 102, cliente: 'Maria Oliveira', dispositivo: 'iPhone 12',   status: 'EM_ANDAMENTO', dataAtualizacao: '2025-05-13T13:10:00', tecnico: 'Ana' },
-        { id: 103, cliente: 'Carlos Souza',  dispositivo: 'Moto G9',      status: 'AGUARDANDO_PECAS', dataAtualizacao: '2025-05-12T11:45:00', tecnico: 'Lucas' }
+        { id: 101, cliente: 'João Silva', dispositivo: 'Samsung A10', status: 'CONCLUIDA', dataAtualizacao: '2025-05-13T14:20:00'},
+        { id: 102, cliente: 'Maria Oliveira', dispositivo: 'iPhone 12',   status: 'EM_ANDAMENTO', dataAtualizacao: '2025-05-13T13:10:00'},
+        { id: 103, cliente: 'Carlos Souza',  dispositivo: 'Moto G9',      status: 'AGUARDANDO_PECAS', dataAtualizacao: '2025-05-12T11:45:00'}
       ],
       distribuicaoPorStatus: {
         CONCLUIDA: 22,

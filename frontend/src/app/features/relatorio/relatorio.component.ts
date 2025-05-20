@@ -23,7 +23,7 @@ import { RelatorioOperacional } from './relatorio.model';
 })
 export class RelatorioComponent implements OnInit {
   relatorio?: RelatorioOperacional;
-  displayedColumns = ['id', 'cliente', 'dispositivo', 'status', 'dataAtualizacao', 'tecnico'];
+  displayedColumns = ['id', 'cliente', 'dispositivo', 'status', 'dataAtualizacao'];
 
   public pieChartLabels: string[] = [];
   public pieChartDatasets: ChartConfiguration<'pie'>['data']['datasets'] = [

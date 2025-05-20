@@ -14,5 +14,4 @@ export interface OrdemResumo {
   dispositivo: string;
   status: string;
   dataAtualizacao: string;
-  tecnico: string;
 }
